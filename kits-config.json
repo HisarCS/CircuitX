@@ -3,6 +3,7 @@
     "automata": {
       "title": "Automata",
       "description": "Kits that illustrate core concepts of cams, cranks and gears which are the most used and base of all mechanical systems.",
+      "detailedDescription": "In the scope of the new technological era we live in, creative learning, prototyping and innovative problem solving are increasing in value day by day. However, newcomers in K12 laboratories find it quite challenging to take on new projects by themselves. Our observations in STEM projects and robotics competitions revealed a significant gap between theoretical knowledge and practical applications in mechanical systems. Aiming to find a constructive way to fill this gap, we prototyped kits labeled \"automata\". Creativity can enhance the hands-on multidisciplinary learning experience by drawing interest in the process of creating a unique outcome.",
       "team": "Noktaparantez #6431",
       "cover": "assets/automata/cover.png",
       "files": {
@@ -73,6 +74,7 @@
     "lemon": {
       "title": "Lemon",
       "description": "Lemon is an affordable and accessible tool for introducing K-12 students to quick prototyping.",
+      "detailedDescription": "Lemon is a robotics education kit that allows beginners to improve their knowledge of mechanics, electronics, 3D design, and programming while building 3 subsequent biomimetic robots. It helps develop students' understanding of robotics and computer sciences while guiding their discovery of the procedure of making a robot.",
       "team": "Noktaparantez #6431",
       "cover": "assets/lemon/cover.png",
       "files": {
