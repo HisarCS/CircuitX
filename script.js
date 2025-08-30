@@ -355,7 +355,7 @@ class KitsGlossary {
     }, 100);
   }
 
-  showKitDetails(kitId) {
+showKitDetails(kitId) {
     console.log('showKitDetails called with:', kitId); // Debug log
     
     if (!this.config) {
@@ -374,6 +374,11 @@ class KitsGlossary {
     this.currentKit = kitId;
     if (this.projectPageTitle) {
       this.projectPageTitle.textContent = kit.title;
+    }
+    
+    // Update description panel content with kit-specific detailed description
+    if (this.descriptionPanelText) {
+      this.descriptionPanelText.textContent = kit.detailedDescription || kit.description;
     }
     
     // Handle top video section
