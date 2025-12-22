@@ -1,0 +1,108 @@
+{
+  "kits": {
+    "automata": {
+      "title": "Automata",
+      "description": "Kits that illustrate core concepts of cams, cranks and gears which are the most used and base of all mechanical systems.",
+      "detailedDescription": "In the scope of the new technological era we live in, creative learning, prototyping and innovative problem solving are increasing in value day by day. However, newcomers in K12 laboratories find it quite challenging to take on new projects by themselves. Our observations in STEM projects and robotics competitions revealed a significant gap between theoretical knowledge and practical applications in mechanical systems. Aiming to find a constructive way to fill this gap, we prototyped kits labeled \"automata\". Creativity can enhance the hands-on multidisciplinary learning experience by drawing interest in the process of creating a unique outcome.",
+      "team": "Noktaparantez #6431",
+      "cover": "assets/automata/cover.png",
+      "files": {
+        "media": [
+          {
+            "name": "Main Demo Video",
+            "file": "assets/automata/demo.mp4"
+          }
+        ],
+        "Instructions": [
+          {
+            "name": "Gear C Manual",
+            "file": "assets/automata/AutomatAR_Gear-C_Manual.pdf"
+          },
+          {
+            "name": "Gear B Manual",
+            "file": "assets/automata/AutomatAR_Gear-B_Manual.pdf"
+          },
+          {
+            "name": "Gear A Manual",
+            "file": "assets/automata/AutomatAR_Gear-A_Manual.pdf"
+          },
+          {
+            "name": "Crank Manual",
+            "file": "assets/automata/AutomatAR_Crank_Manual.pdf"
+          },
+          {
+            "name": "Cam C Manual",
+            "file": "assets/automata/AutomatAR_Cam-C_Manual.pdf"
+          },
+          {
+            "name": "Cam A Manual",
+            "file": "assets/automata/AutomatAR_Cam-A_Manual.pdf"
+          }
+        ],
+        "cad_models": [
+          {
+            "name": "Base Platform Model",
+            "file": "assets/automata/AutomatAR_Base_Platform_Model.stl"
+          },
+          {
+            "name": "Gear C 3D Model",
+            "file": "assets/automata/AutomatAR_Gear-C_3D_Model.stl"
+          },
+          {
+            "name": "Gear B 3D Model",
+            "file": "assets/automata/AutomatAR_Gear-B_3D_Model.stl"
+          },
+          {
+            "name": "Gear A 3D Model",
+            "file": "assets/automata/AutomatAR_Gear-A_3D_Model.stl"
+          },
+          {
+            "name": "Crank 3D Model",
+            "file": "assets/automata/AutomatAR_Crank_3D_Model.stl"
+          },
+          {
+            "name": "Cam C 3D Model",
+            "file": "assets/automata/AutomatAR_Cam-C_3D_Model.stl"
+          },
+          {
+            "name": "Cam A 3D Model",
+            "file": "assets/automata/AutomatAR_Cam-A_3D_Model.stl"
+          }
+        ]      
+      }
+    },
+    "lemon": {
+      "title": "Lemon",
+      "description": "Lemon is an affordable and accessible tool for introducing K-12 students to quick prototyping.",
+      "detailedDescription": "Lemon is a robotics education kit that allows beginners to improve their knowledge of mechanics, electronics, 3D design, and programming while building 3 subsequent biomimetic robots. It helps develop students' understanding of robotics and computer sciences while guiding their discovery of the procedure of making a robot.",
+      "team": "Noktaparantez #6431",
+      "cover": "assets/lemon/cover.png",
+      "files": {
+        "media": [
+          {
+            "name": "System Overview Video",
+            "file": "assets/lemon/overview.mp4"
+          }
+        ],
+  "Source Code": [
+          {
+            "name": "Lime Servo Code",
+            "file": "assets/lemon/servo.py"
+          }
+        ],
+       
+        "tutorial_videos": [
+          {
+            "name": "How to build Lime",
+            "file": "assets/lemon/navigation_demo.mp4"
+          },
+          {
+            "name": "How to program a Lemon robot",
+            "file": "assets/lemon/training_demo.mp4"
+          }
+        ]
+      
+      }
+    }
+  }
+}
