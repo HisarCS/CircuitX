@@ -25,8 +25,14 @@ class AdminDashboard {
     this.currentEditingBlog = null;
     this.isAuthenticated = false;
     
+    // File handles for automatic saving
+    this.kitsFileHandle = null;
+    this.blogsFileHandle = null;
+    this.hasFileAccess = false;
+    
     this.initializeEventListeners();
     this.checkAuth();
+    this.initializeFileAccess();
   }
 
   // Simple SHA-256 hash function
@@ -299,6 +305,75 @@ class AdminDashboard {
     document.querySelectorAll('.admin-tab-content').forEach(content => {
       content.classList.toggle('active', content.id === `admin-${tabName}-tab`);
     });
+  }
+
+  async initializeFileAccess() {
+    // Check if File System Access API is available
+    if ('showOpenFilePicker' in window && 'showSaveFilePicker' in window) {
+      this.hasFileAccess = true;
+      this.updateFileAccessStatus('File System Access API available. JSON files will auto-save when you add/edit kits or blogs.');
+    } else {
+      this.updateFileAccessStatus('File System Access API not available. JSON files will download automatically when you save.');
+    }
+  }
+
+  updateFileAccessStatus(message, type = 'info') {
+    const statusElement = document.getElementById('file-access-status');
+    const textElement = document.getElementById('file-access-text');
+    if (statusElement && textElement) {
+      textElement.textContent = `Auto-save: ${message}`;
+      // Update styling based on type
+      statusElement.classList.remove('success', 'error');
+      if (type === 'success') {
+        statusElement.classList.add('success');
+      } else if (type === 'error') {
+        statusElement.classList.add('error');
+      }
+    }
+  }
+
+  async requestFileAccess(filename) {
+    if (!this.hasFileAccess) return null;
+    
+    try {
+      // Request file access - user needs to select the file once
+      this.updateFileAccessStatus(`Please select ${filename} to enable auto-save...`);
+      const [fileHandle] = await window.showOpenFilePicker({
+        suggestedName: filename,
+        types: [{
+          description: 'JSON files',
+          accept: { 'application/json': ['.json'] }
+        }],
+        multiple: false
+      });
+      
+      this.updateFileAccessStatus(`${filename} access granted! Auto-save enabled.`, 'success');
+      return fileHandle;
+    } catch (error) {
+      if (error.name !== 'AbortError') {
+        console.error('Error requesting file access:', error);
+        this.updateFileAccessStatus(`Could not access ${filename}. Files will download instead.`);
+      } else {
+        this.updateFileAccessStatus(`File access cancelled. Files will download instead.`);
+      }
+      return null;
+    }
+  }
+
+  async writeToFile(fileHandle, content) {
+    if (!fileHandle) return false;
+    
+    try {
+      const writable = await fileHandle.createWritable();
+      await writable.write(content);
+      await writable.close();
+      this.updateFileAccessStatus('JSON file updated successfully!', 'success');
+      return true;
+    } catch (error) {
+      console.error('Error writing to file:', error);
+      this.updateFileAccessStatus('Error writing file. Will download instead.');
+      return false;
+    }
   }
 
   async loadConfigs() {
@@ -659,7 +734,7 @@ class AdminDashboard {
     this.currentEditingBlog = null;
   }
 
-  saveKit() {
+  async saveKit() {
     const kitId = document.getElementById('kit-id').value;
     const title = document.getElementById('kit-title').value;
     const description = document.getElementById('kit-description').value;
@@ -702,12 +777,15 @@ class AdminDashboard {
       files
     };
     
+    // Automatically save to JSON file
+    await this.autoSaveKits();
+    
     this.renderKits();
     this.closeModals();
-    this.showNotification('Kit saved successfully!');
+    this.showNotification('Kit saved and JSON updated!');
   }
 
-  saveBlog() {
+  async saveBlog() {
     const blogId = document.getElementById('blog-id').value;
     const title = document.getElementById('blog-title').value;
     const text = document.getElementById('blog-text').value;
@@ -723,48 +801,100 @@ class AdminDashboard {
       image
     };
     
+    // Automatically save to JSON file
+    await this.autoSaveBlogs();
+    
     this.renderBlogs();
     this.closeModals();
-    this.showNotification('Blog post saved successfully!');
+    this.showNotification('Blog post saved and JSON updated!');
   }
 
-  deleteKit(kitId) {
+  async deleteKit(kitId) {
     if (confirm(`Are you sure you want to delete the kit "${this.kitsConfig.kits[kitId].title}"?`)) {
       delete this.kitsConfig.kits[kitId];
+      // Automatically save to JSON file
+      await this.autoSaveKits();
       this.renderKits();
-      this.showNotification('Kit deleted successfully!');
+      this.showNotification('Kit deleted and JSON updated!');
     }
   }
 
-  deleteBlog(blogId) {
+  async deleteBlog(blogId) {
     if (confirm(`Are you sure you want to delete the blog post "${this.blogsConfig.blogs[blogId].title}"?`)) {
       delete this.blogsConfig.blogs[blogId];
+      // Automatically save to JSON file
+      await this.autoSaveBlogs();
       this.renderBlogs();
-      this.showNotification('Blog post deleted successfully!');
+      this.showNotification('Blog post deleted and JSON updated!');
     }
   }
 
   async saveAll() {
     try {
-      // In a real implementation, you'd send this to a server
-      // For now, we'll use the File System Access API if available, or download
-      await this.saveKitsToFile();
-      await this.saveBlogsToFile();
-      this.showNotification('All changes saved!');
+      await this.autoSaveKits();
+      await this.autoSaveBlogs();
+      this.showNotification('All changes saved to JSON files!');
     } catch (error) {
       console.error('Error saving:', error);
-      alert('Error saving files. Use Export buttons to download JSON files manually.');
+      this.showNotification('Error saving. Using fallback download method.');
+      // Fallback to download
+      await this.saveKitsToFile();
+      await this.saveBlogsToFile();
     }
+  }
+
+  async autoSaveKits() {
+    const json = JSON.stringify(this.kitsConfig, null, 2);
+    
+    // Try to use File System Access API
+    if (this.hasFileAccess) {
+      // Request file access if we don't have it
+      if (!this.kitsFileHandle) {
+        this.kitsFileHandle = await this.requestFileAccess('kits-config.json');
+      }
+      
+      if (this.kitsFileHandle) {
+        const success = await this.writeToFile(this.kitsFileHandle, json);
+        if (success) {
+          return; // Successfully saved
+        }
+      }
+    }
+    
+    // Fallback: download file
+    this.downloadFile('kits-config.json', json);
+  }
+
+  async autoSaveBlogs() {
+    const json = JSON.stringify(this.blogsConfig, null, 2);
+    
+    // Try to use File System Access API
+    if (this.hasFileAccess) {
+      // Request file access if we don't have it
+      if (!this.blogsFileHandle) {
+        this.blogsFileHandle = await this.requestFileAccess('blogs-config.json');
+      }
+      
+      if (this.blogsFileHandle) {
+        const success = await this.writeToFile(this.blogsFileHandle, json);
+        if (success) {
+          return; // Successfully saved
+        }
+      }
+    }
+    
+    // Fallback: download file
+    this.downloadFile('blogs-config.json', json);
   }
 
   async saveKitsToFile() {
     const json = JSON.stringify(this.kitsConfig, null, 2);
-    await this.downloadFile('kits-config.json', json);
+    this.downloadFile('kits-config.json', json);
   }
 
   async saveBlogsToFile() {
     const json = JSON.stringify(this.blogsConfig, null, 2);
-    await this.downloadFile('blogs-config.json', json);
+    this.downloadFile('blogs-config.json', json);
   }
 
   exportKitsJSON() {
