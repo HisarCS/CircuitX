@@ -88,7 +88,7 @@ class KitsGlossary {
       '2635': {
         number: '2635',
         name: 'Lake Monsters',
-        description: 'Demo team showcasing the platform capabilities. This is an example of how team information would be displayed in the popup.',
+        description: 'FIRST Robotics Competition team based in Lake Oswego, Oregon, USA; creating technological works of art that are fueled by the creativity of young engineers.',
         socialLinks: [
           {
             name: 'Instagram',
