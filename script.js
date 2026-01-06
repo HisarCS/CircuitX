@@ -85,7 +85,7 @@ class KitsGlossary {
           }
         ]
       },
-      '2635': {
+        '2635': {
         number: '2635',
         name: 'Lake Monsters',
         description: 'FIRST Robotics Competition team based in Lake Oswego, Oregon, USA; creating technological works of art that are fueled by the creativity of young engineers.',
@@ -103,7 +103,7 @@ class KitsGlossary {
             url: 'https://frc2635.org'
           }
         ]
-      }
+      },
     };
 
     this.initializeElements();
