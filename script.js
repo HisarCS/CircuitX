@@ -85,22 +85,22 @@ class KitsGlossary {
           }
         ]
       },
-      'demo': {
-        number: '0',
-        name: 'Lorem Impus Dolor',
+      '2635': {
+        number: '2635',
+        name: 'Lake Monsters',
         description: 'Demo team showcasing the platform capabilities. This is an example of how team information would be displayed in the popup.',
         socialLinks: [
           {
             name: 'Instagram',
-            url: 'https://instagram.com/demo'
+            url: 'https://instagram.com/lakemonsters2635'
           },
           {
-            name: 'GitHub',
-            url: 'https://github.com/demo'
+            name: 'Youtube',
+            url: 'https://youtube.com/@lakemonsters2635'
           },
           {
             name: 'Team Website',
-            url: 'https://demo.example.com'
+            url: 'https://frc2635.org'
           }
         ]
       }
