@@ -62,6 +62,29 @@ class KitsGlossary {
           }
         ]
       },
+        '4131': {
+        number: '4131',
+        name: 'Iron Patriots',
+        description: 'FIRST Robotics Competition team based in Renton, WA dedicated to growing an ironclad STEM community since 2011.',
+        socialLinks: [
+          {
+            name: 'Instagram',
+            url: 'https://www.instagram.com/frc4131/'
+          },
+          {
+            name: 'Facebook',
+            url: 'https://www.facebook.com/FRC4131'
+          },
+          {
+            name: 'Team Website',
+            url: 'https://www.frc4131.org'
+          },
+          {
+            name: 'YouTube',
+            url: 'https://youtube.com/@IronPatriots'
+          }
+        ]
+      },
       'demo': {
         number: '0',
         name: 'Lorem Impus Dolor',
