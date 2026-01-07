@@ -878,7 +878,17 @@ showKitDetails(kitId) {
   }
 }
 
-// Initialize the application
+
 document.addEventListener('DOMContentLoaded', () => {
   new KitsGlossary();
+});
+
+document.getElementById('top-admin-btn').addEventListener('click', function() {
+
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.getElementById('admin').classList.add('active');
+    
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    
+    window.scrollTo(0, 0);
 });
