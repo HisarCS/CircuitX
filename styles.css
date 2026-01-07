@@ -64,13 +64,37 @@ header {
     text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
 }
 
-nav {
-    background: #28282d;
-    padding: 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid #ff6b35;
+.nav-tabs {
+  display: flex;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1200px;
+  background: #fff;
+  justify-content: center;
+}
+
+.nav-tab { 
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.nav-tab .tab-btn {
+  appearance: none;
+  background: #fff;
+  border: none;
+  border-right: 1px solid rgba(0,0,0,0.08);
+  padding: 14px 24px; 
+  cursor: pointer;
+  font-weight: 600;
+  color: #111;
+  transition: background 0.12s ease, color 0.12s ease;
+  font-family: 'Dosis', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+  white-space: nowrap; 
 }
 
 .nav-tabs {
@@ -80,10 +104,6 @@ nav {
     margin: 0 auto;
     padding: 0 20px;
     justify-content: center;
-}
-
-.nav-tab {
-    margin: 0 1rem;
 }
 
 .nav-tab button {
