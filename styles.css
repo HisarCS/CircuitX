@@ -64,46 +64,161 @@ header {
     text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
 }
 
-.nav-tabs {
-  display: flex;
-  gap: 0;
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  max-width: 1200px;
-  background: #fff;
-  justify-content: center;
-}
-
-.nav-tab { 
-  margin: 0;
-  flex: 0 0 auto;
-}
-
-.nav-tab .tab-btn {
-  appearance: none;
-  background: #fff;
-  border: none;
-  border-right: 1px solid rgba(0,0,0,0.08);
-  padding: 14px 24px; 
-  cursor: pointer;
-  font-weight: 600;
-  color: #111;
-  transition: background 0.12s ease, color 0.12s ease;
-  font-family: 'Dosis', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.95rem;
-  white-space: nowrap; 
+nav {
+    background: #28282d;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #ff6b35;
+    width: 100%;
 }
 
 .nav-tabs {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     list-style: none;
-    max-width: 1200px;
+    padding: 0;
     margin: 0 auto;
-    padding: 0 20px;
+    max-width: 800px; /* Controls the overall width */
+    background: transparent;
     justify-content: center;
+    align-items: stretch;
+    gap: 0;
+}
+
+.nav-tab {
+    margin: 0;
+    padding: 0;
+    flex: 1 1 0; /* Each button takes equal width */
+    display: flex;
+    min-width: 0; /* Allows flex to shrink properly */
+}
+
+.nav-tab button,
+.nav-tab .tab-btn,
+.tab-btn {
+    /* Reset */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    /* Layout - FULL WIDTH */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Takes full width of parent */
+    
+    /* Spacing - WIDER PADDING */
+    padding: 16px 40px;
+    min-height: 52px;
+    
+    /* Borders */
+    border: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 0;
+    margin: 0;
+    
+    /* Background & Colors */
+    background: #fff;
+    color: #111;
+    
+    /* Typography */
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1.2;
+    
+    /* Interaction */
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+    
+    /* Box model */
+    box-sizing: border-box;
+}
+
+/* Remove border from last button */
+.nav-tab:last-child button,
+.nav-tab:last-child .tab-btn {
+    border-right: none;
+}
+
+/* Hover effect */
+.nav-tab button:hover,
+.nav-tab .tab-btn:hover,
+.tab-btn:hover {
+    background: #f5f5f5;
+    transform: translateY(-1px);
+}
+
+/* Active effect */
+.nav-tab button:active,
+.nav-tab .tab-btn:active,
+.tab-btn:active {
+    background: #ececec;
+    transform: translateY(0);
+}
+
+/* Active state styling */
+.nav-tab button.active,
+.nav-tab .tab-btn.active,
+.tab-btn.active {
+    background: linear-gradient(180deg, #ffffff, #f9f9f9);
+    box-shadow: inset 0 -3px 0 #ff6b35;
+    position: relative;
+    color: #ff6b35;
+}
+
+/* Orange underline for active tab */
+.nav-tab button.active::after,
+.nav-tab .tab-btn.active::after,
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #ff6b35;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .nav-tabs {
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+    
+    .nav-tab {
+        flex: 1 1 45%; /* 2 buttons per row on mobile */
+        min-width: 120px;
+    }
+    
+    .nav-tab button,
+    .nav-tab .tab-btn,
+    .tab-btn {
+        padding: 14px 24px;
+        font-size: 0.9rem;
+        border-right: 1px solid rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-tab {
+        flex: 1 1 100%; /* Full width on very small screens */
+    }
+    
+    .nav-tab button,
+    .nav-tab .tab-btn,
+    .tab-btn {
+        border-right: none;
+    }
 }
 
 .nav-tab button {
