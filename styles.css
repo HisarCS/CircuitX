@@ -32,6 +32,19 @@ header {
     text-align: center;
 }
 
+.site-header {
+  width: 100%;
+  height: 180px; 
+  overflow: hidden;
+  display: block;
+}
+.header-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
+
 .logo {
     font-size: 2rem;
     font-weight: bold;
