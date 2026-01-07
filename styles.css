@@ -64,9 +64,6 @@ header {
     text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
 }
 
-/* ========================================
-   NAVIGATION - IMPROVED & CENTERED
-   ======================================== */
 nav {
     background: #28282d;
     padding: 0;
@@ -84,7 +81,7 @@ nav {
     list-style: none;
     padding: 0;
     margin: 0 auto;
-    max-width: 900px; /* Centered with max width */
+    max-width: 900px; 
     background: transparent;
     justify-content: center;
     align-items: stretch;
@@ -94,7 +91,7 @@ nav {
 .nav-tab {
     margin: 0;
     padding: 0;
-    flex: 1 1 0; /* Equal width for all buttons */
+    flex: 1 1 0; 
     display: flex;
     min-width: 0;
 }
@@ -102,32 +99,27 @@ nav {
 .nav-tab button,
 .nav-tab .tab-btn,
 .tab-btn {
-    /* Reset */
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     
-    /* Layout - FULL WIDTH */
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     
-    /* Spacing - WIDER HORIZONTAL PADDING */
-    padding: 16px 50px; /* Increased horizontal padding from 40px to 50px */
+
+    padding: 16px 50px;
     min-height: 52px;
     
-    /* Borders */
     border: none;
     border-right: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 0;
     margin: 0;
     
-    /* Background & Colors */
-    background: #fff;
+    background: #fef7e7;
     color: #111;
     
-    /* Typography */
     font-family: 'Dosis', sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -137,21 +129,17 @@ nav {
     white-space: nowrap;
     line-height: 1.2;
     
-    /* Interaction */
     cursor: pointer;
     transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
     
-    /* Box model */
     box-sizing: border-box;
 }
 
-/* Remove border from last button */
 .nav-tab:last-child button,
 .nav-tab:last-child .tab-btn {
     border-right: none;
 }
 
-/* Hover effect */
 .nav-tab button:hover,
 .nav-tab .tab-btn:hover,
 .tab-btn:hover {
@@ -159,7 +147,6 @@ nav {
     transform: translateY(-1px);
 }
 
-/* Active effect */
 .nav-tab button:active,
 .nav-tab .tab-btn:active,
 .tab-btn:active {
@@ -167,7 +154,6 @@ nav {
     transform: translateY(0);
 }
 
-/* Active state styling */
 .nav-tab button.active,
 .nav-tab .tab-btn.active,
 .tab-btn.active {
@@ -177,7 +163,6 @@ nav {
     color: #ff6b35;
 }
 
-/* Orange underline for active tab */
 .nav-tab button.active::after,
 .nav-tab .tab-btn.active::after,
 .tab-btn.active::after {
@@ -190,7 +175,6 @@ nav {
     background: #ff6b35;
 }
 
-/* Mobile responsive */
 @media (max-width: 768px) {
     .nav-tabs {
         max-width: 100%;
@@ -246,7 +230,7 @@ main {
 .top-admin-btn {
   position: absolute;
   top: 12px;
-  right: 16px;
+  left: 16px;
   font-size: 0.85rem;
   padding: 8px 16px; 
   background: rgba(20,20,24,0.9);
@@ -488,7 +472,6 @@ main {
     margin-bottom: 2rem;
 }
 
-/* Dynamic sections - will match any section ending with '-section' */
 [class$="-section"] {
     background: #28282d;
     border: 2px solid #ff6b35;
@@ -609,7 +592,6 @@ main {
     text-align: justify;
 }
 
-/* Mobile responsiveness for description panel */
 @media (max-width: 768px) {
     .description-panel {
         width: 100%;
@@ -646,7 +628,6 @@ main {
     gap: 1.5rem;
 }
 
-/* Dynamic grids - will match any grid not ending with 'downloads-grid' */
 [class$="-grid"]:not(.downloads-grid) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -680,7 +661,6 @@ main {
     font-size: 0.9rem;
 }
 
-/* Generic file items and previews for dynamic content */
 .file-item {
     background: #1a1a1f;
     border: 1px solid #ff6b35;
@@ -709,7 +689,6 @@ main {
     overflow: hidden;
 }
 
-/* PDF thumbnail specific styles */
 .file-preview canvas {
     max-width: 100%;
     max-height: 100%;
