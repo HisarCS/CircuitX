@@ -152,7 +152,7 @@
       "description": "The Squiggle Bot is a kit that allows beginners to create their own mini-bot that draws, improving their knowledge of basic electric circuits. ",
       "detailedDescription": "",
       "team": "Lake Monsters #2635",
-      "cover": "squiggle.jpeg",
+      "cover": "assets/squiggle.jpeg",
       "files": {
         "media": [],
         "Instructions": [
@@ -172,7 +172,7 @@
       "description": "The Toothbrush Bot is a robotics education kit that allows beginners to improve their knowledge on electric circuits while building a mini robot.",
       "detailedDescription": "",
       "team": "Lake Monsters #2635",
-      "cover": "toothbrush.jpeg",
+      "cover": "assets/toothbrush.jpeg",
       "files": {
         "media": [],
         "Instructions": [
