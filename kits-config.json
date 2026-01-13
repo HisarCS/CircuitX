@@ -132,7 +132,7 @@
       "description": "The Lightsaber kit is a STEM kit that allows kids to learn about basic circuitry.",
       "detailedDescription": "",
       "team": "Lake Monsters #2635",
-      "cover": "",
+      "cover": "assets/lightsaber.jpeg",
       "files": {
         "media": [],
         "Instructions": [
@@ -152,7 +152,7 @@
       "description": "The Squiggle Bot is a kit that allows beginners to create their own mini-bot that draws, improving their knowledge of basic electric circuits. ",
       "detailedDescription": "",
       "team": "Lake Monsters #2635",
-      "cover": "",
+      "cover": "squiggle.jpeg",
       "files": {
         "media": [],
         "Instructions": [
@@ -172,7 +172,7 @@
       "description": "The Toothbrush Bot is a robotics education kit that allows beginners to improve their knowledge on electric circuits while building a mini robot.",
       "detailedDescription": "",
       "team": "Lake Monsters #2635",
-      "cover": "",
+      "cover": "toothbrush.jpeg",
       "files": {
         "media": [],
         "Instructions": [
