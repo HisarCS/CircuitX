@@ -211,56 +211,6 @@
         "tutorial_videos": [],
         "downloads": []
       }
-       },
-    "yoden": {
-      "title": "YODEN",
-      "description": "x.",
-      "detailedDescription": "",
-      "team": "Noktaparantez #6431",
-      "cover": "assets/yoden.png",
-      "files": {
-        "media": [
-          {
-            "name": "yoden-demo.mp4",
-            "file": "assets/yoden-demo.mp4"
-          }
-        ],
-        "Instructions": [
-          {
-            "name": "yoden-desc.pdf",
-            "file": "assets/yoden-desc.pdf"
-          }
-        ],
-        "cad_models": [
-          {
-            "name": "Kit 1 - stl",
-            "file": "yodenkit1.stl"
-          },
-          {
-            "name": "Kit 1 - dxf",
-            "file": "yodenkit1.dxf"
-          },
-          {
-            "name": "Kit 2 - stl",
-            "file": "assets/yodenkit2.stl"
-          },
-          {
-            "name": "Kit 2 - dxf",
-            "file": "assets/yodenkit2.dxf"
-          },
-          {
-            "name": "Kit 3 - stl",
-            "file": "assets/yodenkit3.stl"
-          },
-          {
-            "name": "Kit 3 - dxf",
-            "file": "assets/yodenkit3.dxf"
-          },
-        ],
-        "Source Code": [],
-        "tutorial_videos": [],
-        "downloads": []
-      }
     }
   }
 }
