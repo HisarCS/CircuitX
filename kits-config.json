@@ -186,6 +186,31 @@
         "tutorial_videos": [],
         "downloads": []
       }
+    },
+    "micro-bit": {
+      "title": "micro:bit",
+      "description": "Cardboard micro:bit Robotics Kit enables middle school students to design, build, and race creative robots while learning basic coding, electronics, and mechanical design through hands-on activities using micro:bit, cardboard, and servo motors.",
+      "detailedDescription": "",
+      "team": "Noktaparantez #6431",
+      "cover": "assets/microbit.png",
+      "files": {
+        "media": [
+          {
+            "name": "microbit-demo.mp4",
+            "file": "assets/new-kit/microbit-demo.mp4"
+          }
+        ],
+        "Instructions": [
+          {
+            "name": "microbit-desc.pdf",
+            "file": "assets/new-kit/microbit-desc.pdf"
+          }
+        ],
+        "cad_models": [],
+        "Source Code": [],
+        "tutorial_videos": [],
+        "downloads": []
+      }
     }
   }
 }
