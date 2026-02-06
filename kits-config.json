@@ -241,7 +241,12 @@
         ],
         "Source Code": [],
         "tutorial_videos": [],
-        "downloads": []
+        "downloads": [
+          {
+            "name": "YÖDEN Modüle Instructions.pdf",
+            "file": "assets/YÖDEN Modüle Instructions.pdf"
+          }
+        ]
       }
     }
   }
