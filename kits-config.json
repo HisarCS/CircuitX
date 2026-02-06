@@ -247,55 +247,6 @@
             "file": "assets/YÖDEN Modüle Instructions.pdf"
           }
         ]
-      },
-    "dragonkit-1": {
-      "title": "Dragon Kit 1",
-      "description": "Dragon Kit 1 helps middle school students learn simple machines through hands on activities. Students build and test a pulley, wheel, inclined plane, and lever. This helps them understand basic physics concepts and how they apply in real life.",
-      "detailedDescription": "Dragon Kit 1 is designed to help middle school students learn about simple machines through hands-on exploration. The kit allows students to experiment with different mechanisms, including a pulley system, spinning wheel, inclined plane, and lever. By building and testing these simple machines, students can better understand basic physics concepts and see how they are used in real life.",
-      "team": "ARC #6014",
-      "cover": "assets/basitmakineler.png",
-      "files": {
-        "media": [],
-        "Instructions": [],
-        "cad_models": [
-          {
-            "name": "Pulley System Files - (27)..zip",
-            "file": "assets/new-kit/Pulley System Files - (27).zip"
-          }
-        ],
-        "Source Code": [],
-        "tutorial_videos": [],
-        "downloads": [
-          {
-            "name": "Simple Machines Education Kit (Dragon Kit) - (27).pdf",
-            "file": "assets/new-kit/Simple Machines Education Kit (Dragon Kit) - (27).pdf"
-          }
-        ]
-      }
-    },
-    "dragonkit-2": {
-      "title": "Dragon Kit 2",
-      "description": "Dragon Kit 2 helps middle school students understand pressure concepts such as hydraulics, water pressure, solid pressure, and gas pressure. Through hands on activities using a dump truck and a robotic arm, students explore how pressure works in different systems.",
-      "detailedDescription": "Dragon Kit 2 focuses on helping middle school students understand pressure-related concepts, including hydraulics, water pressure, solid pressure, and gas pressure. The kit allows students to explore these physics concepts through hands-on activities. It includes two main components: a dump truck and a robotic arm.",
-      "team": "ARC #6014",
-      "cover": "assets/subasinci.png",
-      "files": {
-        "media": [],
-        "Instructions": [],
-        "cad_models": [
-          {
-            "name": "Robotic Arm Files - (27).zip",
-            "file": "assets/new-kit/Robotic Arm Files - (27).zip"
-          }
-        ],
-        "Source Code": [],
-        "tutorial_videos": [],
-        "downloads": [
-          {
-            "name": "Su Basıncı Eğitim Kiti Kitapçığı kopyası - (27).pdf",
-            "file": "assets/new-kit/Su Basıncı Eğitim Kiti Kitapçığı kopyası - (27).pdf"
-          }
-        ]
       }
     }
   }
