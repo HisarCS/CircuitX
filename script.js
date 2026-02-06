@@ -86,25 +86,24 @@ class KitsGlossary {
         ]
       },
         '2635': {
-        number: '2635',
-        name: 'Lake Monsters',
-        description: 'FIRST Robotics Competition team based in Lake Oswego, Oregon, USA; creating technological works of art that are fueled by the creativity of young engineers.',
-        socialLinks: [
-          {
-            name: 'Instagram',
-            url: 'https://instagram.com/lakemonsters2635'
-          },
-          {
-            name: 'Youtube',
-            url: 'https://youtube.com/@lakemonsters2635'
-          },
-          {
-            name: 'Team Website',
-            url: 'https://frc2635.org'
-          },
-          '6014': {
-        number: '6014',
-        name: 'ARC',
+  number: '2635',
+  name: 'Lake Monsters',
+  description: 'FIRST Robotics Competition team based in Lake Oswego, Oregon, USA; creating technological works of art that are fueled by the creativity of young engineers.',
+  socialLinks: [
+    {
+      name: 'Instagram',
+      url: 'https://instagram.com/lakemonsters2635'
+    },
+    {
+      name: 'Youtube',
+      url: 'https://youtube.com/@lakemonsters2635'
+    },
+    {
+      name: 'Team Website',
+      url: 'https://frc2635.org'
+    },
+    '6014': { 
+      number: '6014',
         description: 'Inspired from the motto of FIRST, ARC is deeply involved in projects to spread STEM all over Turkey and beyond.',
         socialLinks: [
           {
