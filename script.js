@@ -101,7 +101,7 @@ class KitsGlossary {
           {
             name: 'Team Website',
             url: 'https://frc2635.org'
-          }
+          },
           '6014': {
         number: '6014',
         name: 'ARC',
