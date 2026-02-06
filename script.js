@@ -102,6 +102,23 @@ class KitsGlossary {
             name: 'Team Website',
             url: 'https://frc2635.org'
           }
+          '6014': {
+        number: '6014',
+        name: 'ARC',
+        description: 'Inspired from the motto of FIRST, ARC is deeply involved in projects to spread STEM all over Turkey and beyond.',
+        socialLinks: [
+          {
+            name: 'Instagram',
+            url: 'https://www.instagram.com/arc6014/'
+          },
+          {
+            name: 'Youtube',
+            url: 'https://www.youtube.com/channel/UC0w6fZ6B1JiBYtjDN0xNdLQ'
+          },
+          {
+            name: 'Team Website',
+            url: 'https://www.arc6014.com/'
+          }
         ]
       },
     };
