@@ -38,91 +38,7 @@ class KitsGlossary {
     this.descriptionPanelText = null;
 
     // Team data
-    this.teamsData = {
-      '6431': {
-        number: '6431',
-        name: 'NoktaParantez',
-        description: 'FIRST Robotics Competition team from Istanbul, Turkey. We focus on innovative engineering solutions and community outreach in STEM education.',
-        socialLinks: [
-          {
-            name: 'Instagram',
-            url: 'https://www.instagram.com/noktaparantez6431/'
-          },
-          {
-            name: 'GitHub',
-            url: 'https://github.com/HisarCS'
-          },
-          {
-            name: 'Team Website',
-            url: 'https://6431.hisarschool.k12.tr/'
-          },
-          {
-            name: 'YouTube',
-            url: 'https://youtube.com/@noktaparantez6431'
-          }
-        ]
-      },
-        '4131': {
-        number: '4131',
-        name: 'Iron Patriots',
-        description: 'FIRST Robotics Competition team based in Renton, WA dedicated to growing an ironclad STEM community since 2011.',
-        socialLinks: [
-          {
-            name: 'Instagram',
-            url: 'https://www.instagram.com/frc4131/'
-          },
-          {
-            name: 'Facebook',
-            url: 'https://www.facebook.com/FRC4131'
-          },
-          {
-            name: 'Team Website',
-            url: 'https://www.frc4131.org'
-          },
-          {
-            name: 'YouTube',
-            url: 'https://youtube.com/@IronPatriots'
-          }
-        ]
-      },
-        '2635': {
-  number: '2635',
-  name: 'Lake Monsters',
-  description: 'FIRST Robotics Competition team based in Lake Oswego, Oregon, USA; creating technological works of art that are fueled by the creativity of young engineers.',
-  socialLinks: [
-    {
-      name: 'Instagram',
-      url: 'https://instagram.com/lakemonsters2635'
-    },
-    {
-      name: 'Youtube',
-      url: 'https://youtube.com/@lakemonsters2635'
-    },
-    {
-      name: 'Team Website',
-      url: 'https://frc2635.org'
-    }
-  ]
-},
-'6014': { 
-      number: '6014',
-        description: 'Inspired from the motto of FIRST, ARC is deeply involved in projects to spread STEM all over Turkey and beyond.',
-        socialLinks: [
-          {
-            name: 'Instagram',
-            url: 'https://www.instagram.com/arc6014/'
-          },
-          {
-            name: 'Youtube',
-            url: 'https://www.youtube.com/channel/UC0w6fZ6B1JiBYtjDN0xNdLQ'
-          },
-          {
-            name: 'Team Website',
-            url: 'https://www.arc6014.com/'
-          }
-        ]
-      },
-    };
+    this.teamsData = {};
 
     this.initializeElements();
     this.initializeEventListeners();
@@ -130,6 +46,7 @@ class KitsGlossary {
     this.loadBlogsConfig();
   }
 
+  // Initialize all DOM elements
   initializeElements() {
     this.tabButtons = document.querySelectorAll('.tab-btn');
     this.tabContents = document.querySelectorAll('.tab-content');
@@ -161,7 +78,7 @@ class KitsGlossary {
     this.descriptionPanelOverlay = document.getElementById('description-panel-overlay');
     this.descriptionPanelClose = document.getElementById('description-panel-close');
     this.descriptionPanelText = document.getElementById('description-panel-text');
-    
+
     // Debug: Check if critical elements exist
     console.log('Elements found:', {
       projectPage: !!this.projectPage,
@@ -194,7 +111,7 @@ class KitsGlossary {
     if (this.nextButton) {
       this.nextButton.addEventListener('click', () => this.nextSlide());
     }
-    
+
     this.slideIndicators.forEach((indicator, index) => {
       indicator.addEventListener('click', () => this.goToSlide(index));
     });
@@ -297,14 +214,14 @@ class KitsGlossary {
 
   showDescriptionPanel() {
     if (!this.descriptionPanelOverlay) return;
-    
+
     this.descriptionPanelOverlay.classList.add('active');
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
   }
 
   hideDescriptionPanel() {
     if (!this.descriptionPanelOverlay) return;
-    
+
     this.descriptionPanelOverlay.classList.remove('active');
     document.body.style.overflow = ''; // Restore scrolling
   }
@@ -347,7 +264,7 @@ class KitsGlossary {
     // Clear existing blog posts (but keep the submit button)
     const submitButton = this.blogContainer.querySelector('.blog-submit-btn');
     this.blogContainer.innerHTML = '';
-    
+
     // Render all blog posts
     Object.entries(this.blogsConfig.blogs).forEach(([blogId, blog]) => {
       const blogPost = this.createBlogPost(blogId, blog);
@@ -363,7 +280,7 @@ class KitsGlossary {
   createBlogPost(blogId, blog) {
     const article = document.createElement('article');
     article.className = 'blog-post';
-    
+
     article.innerHTML = `
       <div class="blog-image">
         <img src="${blog.image}" alt="${blog.title}" onerror="this.parentElement.innerHTML='<div class=\'blog-placeholder\'>Blog Image</div>'">
@@ -373,7 +290,7 @@ class KitsGlossary {
         <p class="blog-text">${blog.text}</p>
       </div>
     `;
-    
+
     return article;
   }
 
@@ -381,7 +298,7 @@ class KitsGlossary {
     if (!this.config || !this.projectsGrid) return;
 
     this.projectsGrid.innerHTML = '';
-    
+
     Object.entries(this.config.kits).forEach(([kitId, kit]) => {
       const card = this.createKitCard(kitId, kit);
       this.projectsGrid.appendChild(card);
@@ -392,7 +309,7 @@ class KitsGlossary {
     const card = document.createElement('div');
     card.className = 'project-card';
     card.setAttribute('data-project', kitId);
-    
+
     card.innerHTML = `
       <div class="project-image">
         <img src="${kit.cover}" alt="${kit.title}" onerror="this.parentElement.innerHTML='Project Image'">
@@ -427,23 +344,23 @@ class KitsGlossary {
         this.navigateToTeamsSection();
       });
     }
-    
+
     return card;
   }
 
   navigateToTeamsSection() {
     console.log('Navigating to teams section'); // Debug log
-    
+
     // Switch to about tab
     this.switchToTab('about');
-    
+
     // Wait a moment for the tab to be visible, then scroll
     setTimeout(() => {
       const teamsSection = document.getElementById('collaborated-teams');
       if (teamsSection) {
-        teamsSection.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'start' 
+        teamsSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
         });
         console.log('Scrolled to teams section'); // Debug log
       } else {
@@ -452,9 +369,9 @@ class KitsGlossary {
     }, 100);
   }
 
-showKitDetails(kitId) {
+  showKitDetails(kitId) {
     console.log('showKitDetails called with:', kitId); // Debug log
-    
+
     if (!this.config) {
       console.error('Config not loaded');
       return;
@@ -467,20 +384,20 @@ showKitDetails(kitId) {
     }
 
     console.log('Kit found:', kit); // Debug log
-    
+
     this.currentKit = kitId;
     if (this.projectPageTitle) {
       this.projectPageTitle.textContent = kit.title;
     }
-    
+
     // Update description panel content with kit-specific detailed description
     if (this.descriptionPanelText) {
       this.descriptionPanelText.textContent = kit.detailedDescription || kit.description;
     }
-    
+
     // Handle top video section
     this.setupVideoSection(kit.files);
-    
+
     // Clear and rebuild dynamic sections
     if (this.dynamicSections) {
       this.dynamicSections.innerHTML = '';
@@ -493,7 +410,7 @@ showKitDetails(kitId) {
 
   hideTeamPopup() {
     if (!this.popupOverlay) return;
-    
+
     this.popupOverlay.classList.remove('active');
     document.body.style.overflow = ''; // Restore scrolling
   }
@@ -501,7 +418,7 @@ showKitDetails(kitId) {
   setupVideoSection(files) {
     // Look for videos in media array or any array containing video files
     let videoFile = null;
-    
+
     // First check media array
     if (files.media && files.media.length > 0) {
       videoFile = files.media.find(file => {
@@ -509,7 +426,7 @@ showKitDetails(kitId) {
         return ['mp4', 'avi', 'mov', 'mkv'].includes(extension);
       });
     }
-    
+
     // If no video in media, check other arrays
     if (!videoFile) {
       for (const [key, fileArray] of Object.entries(files)) {
@@ -522,7 +439,7 @@ showKitDetails(kitId) {
         }
       }
     }
-    
+
     if (this.videoContainer) {
       if (videoFile) {
         this.videoContainer.innerHTML = `
@@ -550,7 +467,7 @@ showKitDetails(kitId) {
   createFileSection(categoryKey, files) {
     const section = document.createElement('div');
     section.className = `${categoryKey}-section`;
-    
+
     const title = document.createElement('h3');
     title.textContent = this.formatSectionTitle(categoryKey);
     section.appendChild(title);
@@ -591,14 +508,14 @@ showKitDetails(kitId) {
 
   getFileIcon(fileName) {
     const extension = fileName.split('.').pop().toLowerCase();
-    
+
     const iconMap = {
       // Documents
       'pdf': '📋',
       'doc': '📋',
       'docx': '📋',
       'txt': '📋',
-      
+
       // 3D Models/CAD
       'stl': '🔧',
       'obj': '🔧',
@@ -606,7 +523,7 @@ showKitDetails(kitId) {
       'stp': '🔧',
       'dwg': '🔧',
       'dxf': '🔧',
-      
+
       // Media
       'mp4': '▶️',
       'avi': '▶️',
@@ -614,14 +531,14 @@ showKitDetails(kitId) {
       'mkv': '▶️',
       'mp3': '🔊',
       'wav': '🔊',
-      
+
       // Images
       'jpg': '🖼️',
       'jpeg': '🖼️',
       'png': '🖼️',
       'gif': '🖼️',
       'svg': '🖼️',
-      
+
       // Code
       'py': '💻',
       'java': '💻',
@@ -630,24 +547,24 @@ showKitDetails(kitId) {
       'js': '💻',
       'html': '💻',
       'css': '💻',
-      
+
       // Archives
       'zip': '📦',
       'rar': '📦',
       '7z': '📦',
       'tar': '📦'
     };
-    
+
     return iconMap[extension] || '📄';
   }
 
   createGridItem(file, categoryKey) {
     const item = document.createElement('div');
     item.className = `file-item`;
-    
+
     const preview = document.createElement('div');
     preview.className = `file-preview`;
-    
+
     // Check if it's a PDF file
     const extension = (file.file || file.name).split('.').pop().toLowerCase();
     if (extension === 'pdf') {
@@ -656,7 +573,7 @@ showKitDetails(kitId) {
     } else {
       preview.innerHTML = `<span style="font-size: 2rem;">${this.getFileIcon(file.file || file.name)}</span>`;
     }
-    
+
     item.appendChild(preview);
 
     const nameDiv = document.createElement('div');
@@ -666,7 +583,7 @@ showKitDetails(kitId) {
 
     // Determine action based on file type
     const videoExtensions = ['mp4', 'avi', 'mov', 'mkv'];
-    
+
     if (videoExtensions.includes(extension)) {
       // For videos, open in new tab
       item.addEventListener('click', () => {
@@ -692,39 +609,39 @@ showKitDetails(kitId) {
       // Load the PDF
       const loadingTask = pdfjsLib.getDocument(pdfUrl);
       const pdf = await loadingTask.promise;
-      
+
       // Get the first page
       const page = await pdf.getPage(1);
-      
+
       // Create canvas
       const canvas = document.createElement('canvas');
       const context = canvas.getContext('2d');
-      
+
       // Calculate scale to fit preview area
       const viewport = page.getViewport({ scale: 1 });
       const previewWidth = 118; // Match the preview container width minus borders
       const previewHeight = 118;
       const scale = Math.min(previewWidth / viewport.width, previewHeight / viewport.height);
-      
+
       const scaledViewport = page.getViewport({ scale });
       canvas.width = scaledViewport.width;
       canvas.height = scaledViewport.height;
-      
+
       // Render PDF page to canvas
       const renderContext = {
         canvasContext: context,
         viewport: scaledViewport
       };
-      
+
       await page.render(renderContext).promise;
-      
+
       // Replace loading text with canvas
       previewElement.innerHTML = '';
       canvas.style.maxWidth = '100%';
       canvas.style.maxHeight = '100%';
       canvas.style.objectFit = 'contain';
       previewElement.appendChild(canvas);
-      
+
     } catch (error) {
       console.error('Error generating PDF thumbnail:', error);
       // Fallback to PDF icon on error
@@ -735,7 +652,7 @@ showKitDetails(kitId) {
   createDownloadItem(file) {
     const downloadItem = document.createElement('div');
     downloadItem.className = 'download-item';
-    
+
     downloadItem.innerHTML = `
       <div>
         <span>💾</span>
@@ -750,23 +667,23 @@ showKitDetails(kitId) {
         </button>
       </div>
     `;
-    
+
     const downloadButton = downloadItem.querySelector('.download-btn');
     if (downloadButton) {
       downloadButton.addEventListener('click', () => this.downloadFile(file));
     }
-    
+
     return downloadItem;
   }
 
   downloadFile(file) {
     const link = document.createElement('a');
     link.href = file.file;
-    
+
     // Extract filename with extension from the file path
     const filename = file.file.split('/').pop();
     link.download = filename || file.name;
-    
+
     link.style.display = 'none';
     document.body.appendChild(link);
     link.click();
@@ -778,17 +695,17 @@ showKitDetails(kitId) {
     if (this.projectPage) {
       this.projectPage.classList.remove('active');
     }
-    
+
     const kitsTab = document.getElementById('kits');
     if (kitsTab) {
       kitsTab.classList.add('active');
     }
-    
+
     // Make sure kits tab button is active
     this.tabButtons.forEach(btn => {
       btn.classList.toggle('active', btn.getAttribute('data-tab') === 'kits');
     });
-    
+
     this.currentKit = null;
   }
 
@@ -801,7 +718,7 @@ showKitDetails(kitId) {
 
   switchToTab(tabId) {
     console.log('switchToTab called with:', tabId); // Debug log
-    
+
     if (tabId === 'project-page') {
       console.log('Switching to project page'); // Debug log
       // Hide all tabs and show project page
@@ -811,12 +728,12 @@ showKitDetails(kitId) {
       if (this.projectPage) {
         this.projectPage.classList.add('active');
       }
-      
+
       // Keep the kits tab button active since project page is part of kits
       this.tabButtons.forEach(btn => {
         btn.classList.toggle('active', btn.getAttribute('data-tab') === 'kits');
       });
-      
+
       console.log('Project page should now be visible'); // Debug log
     } else {
       console.log('Switching to regular tab:', tabId); // Debug log
@@ -852,7 +769,7 @@ showKitDetails(kitId) {
       const translateX = -this.currentSlide * 33.333; // 33.333% per slide (3 slides total)
       this.slidesContainer.style.transform = `translateX(${translateX}%)`;
     }
-    
+
     // Update indicators
     this.slideIndicators.forEach((indicator, index) => {
       indicator.classList.toggle('active', index === this.currentSlide);
@@ -872,7 +789,7 @@ showKitDetails(kitId) {
         this.showKitsList();
       }
     }
-    
+
     // Slider keyboard navigation (only on about tab)
     const aboutTab = document.getElementById('about');
     if (aboutTab && aboutTab.classList.contains('active')) {
@@ -896,17 +813,7 @@ showKitDetails(kitId) {
   }
 }
 
-
+// Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
   new KitsGlossary();
-});
-
-document.getElementById('top-admin-btn').addEventListener('click', function() {
-
-    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-    document.getElementById('admin').classList.add('active');
-    
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    
-    window.scrollTo(0, 0);
 });
