@@ -211,6 +211,38 @@
         "tutorial_videos": [],
         "downloads": []
       }
+    },
+    "yoden": {
+      "title": "YÖDEN",
+      "description": "YÖDEN is an unplugged game-based educational kit consisting of 3 modules that teach the principles of AI",
+      "detailedDescription": "YÖDEN is an unplugged, game-based educational kit designed to teach the fundamental principles of artificial intelligence through hands-on, screen-free interaction. The kit consists of three structured modules, each focusing on a core concept of AI such as data collection, decision-making logic, and model training. Rather than relying on digital interfaces, YÖDEN translates abstract computational processes into tangible physical experiences.\n\nThrough interactive gameplay, students actively simulate how AI systems learn from data, recognize patterns, and make predictions. By manipulating physical components and participating in rule-based activities, learners experience the mechanics behind algorithms in a concrete and intuitive way. This approach strengthens conceptual understanding while reducing cognitive overload often caused by screen-based tools.\n\nYÖDEN aims to make AI literacy more accessible, inclusive, and developmentally appropriate by prioritizing experiential learning, collaboration, and critical thinking over passive consumption of technology.",
+      "team": "NoktaParantez #6431",
+      "cover": "assets/yoden.png",
+      "files": {
+        "media": [],
+        "Instructions": [],
+        "cad_models": [
+          {
+            "name": "Mixer.step",
+            "file": "assets/new-kit/Mixer.step"
+          },
+          {
+            "name": "Modules.step",
+            "file": "assets/new-kit/Modules.step"
+          },
+          {
+            "name": "NewSpinner_v2.step",
+            "file": "assets/new-kit/NewSpinner_v2.step"
+          },
+          {
+            "name": "SpinnerFull.step",
+            "file": "assets/new-kit/SpinnerFull.step"
+          }
+        ],
+        "Source Code": [],
+        "tutorial_videos": [],
+        "downloads": []
+      }
     }
   }
 }
