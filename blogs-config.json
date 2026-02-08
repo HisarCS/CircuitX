@@ -1,11 +1,11 @@
 {
   "blogs": {
-    "blog2": {
+    "blog3": {
       "title": "Teaching Automata Kits at Ordu",
       "text": "On December 5–6, 2025, members of our team taught basic assembly, mechanical systems, and introduced augmented reality by handing out over 40 Automata kits per 4 sessions at our sister school in Ordu as part of the Learn–Teach (Öğren-Öğret) project.",
       "image": "blog3.png"
     },
-    "blog3": {
+    "blog2": {
       "title": "Lemon Robotics Training at Ordu",
       "text": "On December 5–6, 2025, members of our team provided basic mechanics, electronics, and coding training through more than 40 Lemon Robotics kits per 4 sessions at our sister school in Ordu as part of the Learn–Teach (Öğren-Öğret) project.",
       "image": "blog2.png"
