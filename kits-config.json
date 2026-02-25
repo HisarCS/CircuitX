@@ -297,6 +297,34 @@
             "file": "assets/new-kit/Su Basıncı Eğitim Kiti Kitapçığı kopyası - (27).pdf"
           }
         ]
+      },
+      "picksy": {
+      "title": "Picksy",
+      "description": "Picksy is an interactive rhythm-learning companion that delivers real-time feedback through a microcontroller and AI-supported app. By detecting timing variations and responding with visual and auditory cues, it makes rhythm practice adaptive and engaging.",
+      "detailedDescription": "Picksy is an interactive rhythm-learning companion that combines a microcontroller-based sensing system with an AI-enhanced mobile application to provide real-time, personalized feedback on a user’s rhythmic performance. By detecting timing and strumming variations and responding with visual, auditory, and tactile cues, it transforms traditional rhythm practice into an engaging, adaptive learning experience across various musical instruments.",
+      "team": "NoktaParantez #6431",
+      "cover": "assets/picksy.jpg",
+      "files": {
+        "media": [],
+        "Instructions": [],
+        "cad_models": [],
+        "Source Code": [],
+        "tutorial_videos": [],
+        "downloads": []
+      },
+      "neuronix": {
+      "title": "Neuronix",
+      "description": "Neuronix is a modular 2D printed kit that transforms neural communication into a hands-on learning experience, making neuroscience interactive and accessible.",
+      "detailedDescription": "Neuronix is a modular 2D printed neuron kit designed to transform neural communication from an abstract diagram into hands on learning experience. Neuronix blends biology, engineering, and maker centered learning to make complex neuroscience concepts accessible, engaging, and highly interactive.",
+      "team": "NoktaParantez #6431",
+      "cover": "assets/neuro.jpg",
+      "files": {
+        "media": [],
+        "Instructions": [],
+        "cad_models": [],
+        "Source Code": [],
+        "tutorial_videos": [],
+        "downloads": []
       }
     }
   }
