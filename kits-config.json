@@ -335,27 +335,18 @@
       "team": "AG Robotik #6459",
       "cover": "assets/wmak.jpg",
       "files": {
-        "media": [
-          {
-            "name": "wmak.mp4",
-            "file": "assets/new-kit/wmak.mp4"
-          }
-        ],
+        "media": [],
         "Instructions": [],
         "cad_models": [],
         "Source Code": [],
-        "tutorial_videos": [
-          {
-            "name": "wmak-tut.mp4",
-            "file": "assets/new-kit/wmak-tut.mp4"
-          }
-        ],
+        "tutorial_videos": [],
         "downloads": [
           {
             "name": "wmak-file.svg",
             "file": "assets/new-kit/wmak-file.svg"
           }
         ]
+      }
       }
     }
   }
