@@ -327,6 +327,35 @@
         "Source Code": [],
         "tutorial_videos": [],
         "downloads": []
+      },
+        "walkingman": {
+      "title": "Walking Man",
+      "description": "The Walking Man Automata Kit is a simple, hands-on kit that teaches young students basic motion and mechanics through building a moving figure.",
+      "detailedDescription": "The Walking Man Automata Kit is a hands-on mechanical learning tool designed for primary school students, enabling them to build a moving figure using simple components like cams, linkages, and rotating shafts. Through this interactive process, students gain a practical understanding of motion, force, energy transfer, and cause-and-effect relationships while also developing problem-solving skills, creativity, and fine motor coordination. Its visual and engaging nature makes abstract engineering concepts more accessible, and its low-cost, scalable design allows it to be easily implemented in classrooms, workshops, and outreach programs as an effective introduction to mechanical engineering and STEM.",
+      "team": "AG Robotik #6459",
+      "cover": "assets/wmak.jpg",
+      "files": {
+        "media": [
+          {
+            "name": "wmak.mp4",
+            "file": "assets/new-kit/wmak.mp4"
+          }
+        ],
+        "Instructions": [],
+        "cad_models": [],
+        "Source Code": [],
+        "tutorial_videos": [
+          {
+            "name": "wmak-tut.mp4",
+            "file": "assets/new-kit/wmak-tut.mp4"
+          }
+        ],
+        "downloads": [
+          {
+            "name": "wmak-file.svg",
+            "file": "assets/new-kit/wmak-file.svg"
+          }
+        ]
       }
     }
   }
